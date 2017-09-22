@@ -26,11 +26,11 @@ $filedate = gmdate("Y-m-d\TH-i-s\Z");
     return $data;
 }
 /*-----FTP to server-----*/
-$ftp_server ='www.rapidretail.net';
-$ftp_user_name = 'ssi_gdw701';
-$ftp_user_pass = 'Golf_701!';
-$local_file = '/var/www/domains/sportsmanssupplyinc.com/jetpartner/htdocs/product/Inventory-JetGDSTL.csv';
-$server_file = '/Inventory/jet/Inventory-JetGDSTL.csv';
+$ftp_server ='your ftp server';
+$ftp_user_name = 'your ftp user name';
+$ftp_user_pass = 'your ftp password';
+$local_file = 'path to your local file';
+$server_file = 'path to your server file';
 // set up basic connection
 $conn_id = ftp_connect($ftp_server); 
 
@@ -64,7 +64,7 @@ if (ftp_get($conn_id, $local_file, $server_file, FTP_BINARY)) {
 
 // close the FTP stream 
 ftp_close($conn_id); 
-$csv = csv_to_array($filename='/var/www/domains/sportsmanssupplyinc.com/jetpartner/htdocs/product/Inventory-JetGDSTL.csv', $delimiter=',');
+$csv = csv_to_array($filename='server file path', $delimiter=',');
 $cnt=0;
 
 foreach ($csv as $value)
@@ -117,13 +117,13 @@ $cnt++;
 // START delete the Inventory File 11/13/15
 
 //copy off file to archives first
-copy("/var/www/domains/sportsmanssupplyinc.com/jetpartner/htdocs/product/Inventory-JetGDSTL.csv", "/var/www/domains/sportsmanssupplyinc.com/jetpartner/htdocs/archives/product/Inventory-JetGDSTL-$filedate.csv");
+copy("path to file", "path to archive");
 echo "file has been archived";
 echo "<br>";
 
 //now deleted the file
-unlink('/var/www/domains/sportsmanssupplyinc.com/jetpartner/htdocs/product/Inventory-JetGDSTL.csv'); 
-echo "Inventory-JetGDSTL has been removed.";
+unlink('path to file'); 
+echo "inventory file has been removed.";
 echo "<br>";
 
 // END delete the Inventory File 11/13/15
