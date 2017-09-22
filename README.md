@@ -7,3 +7,5 @@ Two versions of every file as each file you have to run the first one to test, a
 You can dump all these files into a single directory on your server and just let it run. I believe there are folders that you need to have, but it's listed in the structure.
 
 If anyone is interested, I also created a Jet Frontend for managing your Jet account - uploading SKU's, Pricing, Images, checking SKU status, etc... Since Jet doesn't provide that to you as a jet partner. You have to write your own against their API.
+
+You will obviously need to tweak these as you'll need to set new passwords, new Ftp servers, new paths, etc... 
